@@ -75,7 +75,7 @@ pyasn1==0.1.9
 pycodestyle==2.5.0
 pycparser==2.14
 pycryptodomex==3.9.0
-pycurl==7.19.0
+pycurl==7.43.0.6
 pyflakes==2.1.1
 Pygments==1.4
 pygobject==3.22.0
