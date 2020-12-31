@@ -12,7 +12,7 @@ del os.link
 # export SWIG_FEATURES="-includeall -D__`uname -m`__"
 # and do the installation from here
 def apply_m2crypto_workaround():
-    print "Applying workaround for M2Crypto in RedHat"
+    print("Applying workaround for M2Crypto in RedHat")
     os.environ['SWIG_FEATURES'] = "-includeall -D__%s__" % platform.machine()
     tmp_dir = tempfile.mkdtemp()
     os.system('pip install --build %s  M2Crypto>=0.16' % tmp_dir)
@@ -27,7 +27,7 @@ def apply_m2crypto_workaround():
 # sed -i s/--static-libs/--libs/g build/pycurl/setup.py
 # pip install build/pycurl
 def apply_pycurl_workaround():
-    print "Applying workaround for pycurl in EL6"
+    print("Applying workaround for pycurl in EL6")
     tmp_dir = tempfile.mkdtemp()
     is_pycurl_installed = (os.system('pip list | grep pycurl &> /dev/null') == 0)
     if not is_pycurl_installed:
@@ -42,7 +42,7 @@ def apply_pycurl_workaround():
 
 # On EL7, you will probably have trouble installing pycurl due to this:
 # https://github.com/pycurl/pycurl/issues/526 which has not yet released
-# so we need to install a previos version of pycurl with 
+# so we need to install a previos version of pycurl with
 # pip install pycurl==7.43.0.1 --global-option="--with-nss
 #def apply_pycurl_workaround_on_el7():
 #    print "Applying workaround for pycurl in EL7"
