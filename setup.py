@@ -87,7 +87,7 @@ setup(
         "Programming Language :: Python"
     ],
 
-    install_requires=['M2Crypto>=0.16', 'pycurl%s' % pycurl_ver, 'requests']
+    install_requires=['distro', 'M2Crypto>=0.16', 'pycurl%s' % pycurl_ver, 'requests']
 )
 
 # Need to install these first so the dependencies can be built!
