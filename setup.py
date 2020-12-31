@@ -1,3 +1,4 @@
+import distro
 import os
 import platform
 import tempfile
@@ -53,7 +54,7 @@ def apply_pycurl_workaround():
 
 # Ugly hack to pick a version that compiles in SLC6
 pycurl_ver = '==7.19.0'
-dist = platform.dist()
+dist = distro.id()  # platform.dist()
 if dist[0] in ('redhat', 'centos'):
     os_major = dist[1].split('.')[0]
     if os_major == '6':
